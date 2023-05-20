@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Countdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      color: #333333;
+    }
+    .countdown {
+      font-size: 24px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Date Countdown</h1>
+  <div class="countdown" id="countdown"></div>
+
+  <script>
+    function updateCountdown() {
+      var targetDate = new Date("9/24/2023");
+      var currentDate = new Date();
+
+      var timeDifference = targetDate - currentDate;
+      var daysRemaining = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+      var countdownElement = document.getElementById("countdown");
+      countdownElement.innerText = "Days remaining: " + daysRemaining;
+    }
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
